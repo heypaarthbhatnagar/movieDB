@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieDB - Your Cinematic Multiverse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <canvas id="header-particles"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100px; z-index: -1; pointer-events: none;"></canvas>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <header>
+        <div class="logo">MOVIEDB</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li>
+                    <a href="#featured">Browse</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">Series</a></li>
+                        <li><a href="#">Curated</a></li>
+                    </ul>
+                </li>
+                <li><a href="#spotlight">Spotlight</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search the Multiverse...">
+            <button><i class="fas fa-search"></i></button>
+            <button class="voice-search"><i class="fas fa-microphone"></i></button>
+        </div>
+        <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+    </header>
+
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+        <canvas id="webgl-bg"></canvas>
+        <div class="hero-content">
+            <h1 data-aos="zoom-in">Enter the Cinematic Multiverse</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Unravel stories, curate epics, and live the movies.</p>
+            <button class="cta" data-aos="fade-up" data-aos-delay="600">Dive In Now</button>
+        </div>
+        <audio id="scroll-sound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"
+            loop></audio>
+    </section>
+
+    <div class="modal" id="trailer-modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <iframe width="100%" height="450" src="" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <section class="spotlight" id="spotlight">
+        <h2 data-aos="fade-down">Spotlight Experience</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="spotlight-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/320x480?text=Epic+Movie+1" alt="Spotlight Movie 1"
+                            loading="lazy">
+                        <div class="spotlight-info">
+                            <h3>The Quantum Epic</h3>
+                            <p>A mind-bending journey through time and space. Rated 9.8/10.</p>
+                            <div class="countdown" data-release="2025-12-25T00:00:00"></div>
+                            <button class="watch-now" data-trailer="https://www.youtube.com/embed/EXeTwQWrcwY">Launch
+                                Trailer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="spotlight-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/320x480?text=Epic+Movie+2" alt="Spotlight Movie 2"
+                            loading="lazy">
+                        <div class="spotlight-info">
+                            <h3>Galactic Odyssey</h3>
+                            <p>An interstellar adventure beyond imagination. Rated 9.5/10.</p>
+                            <div class="countdown" data-release="2025-11-15T00:00:00"></div>
+                            <button class="watch-now" data-trailer="https://www.youtube.com/embed/dQw4w9WgXcQ">Launch
+                                Trailer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <section class="featured-movies" id="featured">
+        <h2 data-aos="fade-down">Infinite Collection</h2>
+        <div class="filter">
+            <label for="genre-filter">Filter by Genre: </label>
+            <select id="genre-filter">
+                <option value="all">All</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Action">Action</option>
+                <option value="Thriller">Thriller</option>
+            </select>
+        </div>
+        <div class="movie-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 data-aos="fade-down">Your Cinematic Toolkit</h2>
+        <div class="feature-cards">
+            <div class="feature-card" data-aos="zoom-out" data-aos-delay="0">
+                <i class="fas fa-cubes"></i>
+                <h3>Holo-Discovery</h3>
+                <p>Explore a 3D universe of cinematic wonders.</p>
+                <div class="feature-detail">
+                    <p>Navigate a holographic interface filled with movie magic.</p>
+                    <button class="demo-button">See Demo</button>
+                </div>
+            </div>
+            <div class="feature-card" data-aos="zoom-out" data-aos-delay="200">
+                <i class="fas fa-plus-square"></i>
+                <h3>Quantum Lists</h3>
+                <p>Build your multiverse watchlist instantly.</p>
+                <div class="feature-detail">
+                    <p>Create and share watchlists across dimensions.</p>
+                    <button class="demo-button">See Demo</button>
+                </div>
+            </div>
+            <div class="feature-card" data-aos="zoom-out" data-aos-delay="400">
+                <i class="fas fa-star-half-alt"></i>
+                <h3>Neural Ratings</h3>
+                <p>Rate and sync with a galaxy of fans.</p>
+                <div class="feature-detail">
+                    <p>Connect with fans and see cosmic ratings.</p>
+                    <button class="demo-button">See Demo</button>
+                </div>
+            </div>
+            <div class="feature-card" data-aos="zoom-out" data-aos-delay="600">
+                <i class="fas fa-vr-cardboard"></i>
+                <h3>VR Streams</h3>
+                <p>Immerse in trailers like never before.</p>
+                <div class="feature-detail">
+                    <p>Step into trailers with VR technology.</p>
+                    <button class="demo-button">See Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 MovieDB. Made by Paarth Bhatnagar</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="newsletter">
+            <form action="#" method="post">
+                <input type="email" placeholder="Join the Movie Matrix" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="sitemap">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Browse</a></li>
+                <li><a href="#spotlight">Spotlight</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h4>Contact Us</h4>
+            <form action="#" method="post">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fas fa-rocket"></i></a>
+    <button class="spotlight-toggle" title="Back to Spotlight"><i class="fas fa-cubes"></i></button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
