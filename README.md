@@ -46,7 +46,9 @@ This project showcases how to create an engaging, interactive web experience usi
 
 Clone the repository and dive into the cinematic multiverse today! Don't forget to add your OMDB API key to unlock the full experience.
 
+**CLICK HERE** : https://moviedbbb.tiiny.site/
 **Live Demo:** https://heypaarthbhatnagar.github.io/movieDB/
+
 
 ---
 
