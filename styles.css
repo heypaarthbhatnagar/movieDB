@@ -1143,3 +1143,25 @@ footer {
     grid-column: 1 / -1;
     text-align: center;
 }
+
+
+/* spotlight  */
+.spotlight-movie {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+.spotlight-movie h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+.spotlight-movie p {
+    font-size: 16px;
+    color: var(--accent);
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

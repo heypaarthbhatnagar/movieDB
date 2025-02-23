@@ -55,49 +55,39 @@
         <div class="hero-content">
             <h1 data-aos="zoom-in">Enter the Cinematic Multiverse</h1>
             <p data-aos="fade-up" data-aos-delay="300">Unravel stories, curate epics, and live the movies.</p>
-            <button class="cta" data-aos="fade-up" data-aos-delay="600">Dive In Now</button>
+            <button class="cta" data-aos="fade-up" data-aos-delay="600">Dive In</button>
         </div>
-        <audio id="scroll-sound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"
-            loop></audio>
+        <audio id="scroll-sound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto" loop></audio>
     </section>
 
     <div class="modal" id="trailer-modal">
         <div class="modal-content">
             <span class="close">×</span>
-            <iframe width="100%" height="450" src="" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            <div class="modal-poster">
+                <img id="modal-poster" src="" alt="Movie Poster" loading="lazy">
+            </div>
+            <div class="modal-details">
+                <h2 id="modal-title"></h2>
+                <p id="modal-plot"></p>
+                <div class="movie-meta">
+                    <p><strong>Year:</strong> <span id="modal-year"></span></p>
+                    <p><strong>Genre:</strong> <span id="modal-genre"></span></p>
+                    <p><strong>Runtime:</strong> <span id="modal-runtime"></span></p>
+                    <p><strong>Director:</strong> <span id="modal-director"></span></p>
+                    <p><strong>Cast:</strong> <span id="modal-cast"></span></p>
+                    <p><strong>IMDb Rating:</strong> <span id="modal-rating"></span></p>
+                </div>
+                <button id="modal-trailer" class="cta">Watch Trailer</button>
+            </div>
         </div>
     </div>
 
+    <!-- Your existing HTML -->
     <section class="spotlight" id="spotlight">
         <h2 data-aos="fade-down">Spotlight Experience</h2>
         <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="spotlight-card" data-aos="fade-up">
-                        <img src="https://via.placeholder.com/320x480?text=Epic+Movie+1" alt="Spotlight Movie 1"
-                            loading="lazy">
-                        <div class="spotlight-info">
-                            <h3>The Quantum Epic</h3>
-                            <p>A mind-bending journey through time and space. Rated 9.8/10.</p>
-                            <div class="countdown" data-release="2025-12-25T00:00:00"></div>
-                            <button class="watch-now" data-trailer="https://www.youtube.com/embed/EXeTwQWrcwY">Launch
-                                Trailer</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="spotlight-card" data-aos="fade-up">
-                        <img src="https://via.placeholder.com/320x480?text=Epic+Movie+2" alt="Spotlight Movie 2"
-                            loading="lazy">
-                        <div class="spotlight-info">
-                            <h3>Galactic Odyssey</h3>
-                            <p>An interstellar adventure beyond imagination. Rated 9.5/10.</p>
-                            <div class="countdown" data-release="2025-11-15T00:00:00"></div>
-                            <button class="watch-now" data-trailer="https://www.youtube.com/embed/dQw4w9WgXcQ">Launch
-                                Trailer</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="swiper-wrapper" id="spotlightSlides">
+                <!-- Dynamic content will be injected here -->
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
